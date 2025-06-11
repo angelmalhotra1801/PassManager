@@ -1,22 +1,21 @@
 const express = require("express");
+require("dotenv").config();
 const dotenv = require("dotenv");
 const { MongoClient } = require("mongodb");
-const bodyparser=require('body-Parser')
+const bodyparser=require('body-parser')
 const cors = require("cors")
 
 const bodyParser = require("body-parser");
 dotenv.config()
 
 // Connection URL
-const url = "mongodb://localhost:27017";
-const client = new MongoClient(url);
+const client = new MongoClient(process.env.MONGO_URI);
 
 // Database Name
 const dbName = "passManager";
 
 const app = express();
-require("dotenv").config();
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.use(bodyParser.json())
 app.use(cors())
 
