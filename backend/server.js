@@ -1,10 +1,8 @@
 const express = require("express");
 require("dotenv").config();
 const { MongoClient } = require("mongodb");
-const cors = require("cors")
-
 const bodyParser = require("body-parser");
-dotenv.config()
+const cors = require("cors");
 
 // Connection URL
 const client = new MongoClient(process.env.MONGO_URI);
@@ -14,28 +12,28 @@ const dbName = "passManager";
 
 const app = express();
 const port = process.env.PORT || 3000;
-app.use(bodyParser.json())
-app.use(cors())
+app.use(bodyParser.json());
+app.use(cors());
 
 client.connect();
 
 //get pass
-app.get("/", async(req, res) => {
+app.get("/", async (req, res) => {
   const db = client.db(dbName);
-  const collection = db.collection('passwords');
+  const collection = db.collection("passwords");
   const findResult = await collection.find({}).toArray();
-  
+
   res.json(findResult);
 });
 
 //save pass
 app.post("/", async (req, res) => {
-  const password = req.body
+  const password = req.body;
   const db = client.db(dbName);
-  const collection = db.collection('passwords');
+  const collection = db.collection("passwords");
   const findResult = await collection.insertOne(password);
 
-  res.send({success:true,result:findResult});
+  res.send({ success: true, result: findResult });
 });
 
 //delete pass
