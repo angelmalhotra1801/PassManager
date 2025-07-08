@@ -1,4 +1,4 @@
-# 🔐 PassManager
+# PassManager
 
 *No Forgetting, No Resetting*
 
@@ -8,19 +8,15 @@ PassManager is a secure and minimal password manager built using the MERN stack 
 
 ---
 
-## ✨ Features
+## Features
 
-- 🔐 Save your passwords securely
-- ⚡ Fast and responsive UI with React + Tailwind
-- 💾 MongoDB-backed data persistence
-- 🛠 Built with Express and Node.js for backend
-- 📱 Mobile responsive & user-friendly
+- Save your passwords securely
+- Fast and responsive UI with React + Tailwind
+- MongoDB-backed data persistence
+- Built with Express and Node.js for backend
+- Mobile responsive & user-friendly
 
 ---
-
-## 🖼️ Screenshots
-
-> Replace these with actual screenshots (You can add the image files in your repo and use the relative path like `./screenshots/home.png`)
 
 ### 🔓 UI of PassManager
 ![Home](./PassManager-ss.jpg)
